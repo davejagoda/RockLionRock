@@ -12,12 +12,13 @@ public class GuitarChords {
 	notes = chordNotes;
     }
     // methods
-    public void playChord ( MidiChannel channel,  int volume ) {
+    public void playChord ( MidiChannel channel,  int volume ) throws InterruptedException {
 	System.out.printf ( "%5s: ", name );
 	for ( int i = 0; i < notes.length; ++i) {
 	    if ( notes[i] > 0 ) {
 		channel.noteOn ( notes[i], volume );
 		System.out.printf ( "%d ", notes[i]);
+		Thread.sleep(50);
 	    } else {
 		System.out.printf ( "00 ");
 	    }
@@ -41,33 +42,33 @@ public class GuitarChords {
 	System.out.printf("current channel is %d\n", chan[0].getProgram());
 
 	GuitarChords[] gc = new GuitarChords[14];
-	gc[ 0] = new GuitarChords ( "CMaj", 00, 60, 64, 67, 72, 76 );
+	gc[ 0] = new GuitarChords ( "CMaj", 00, 48, 52, 55, 60, 64 );
 	//                                  X   C   E   G   C   E
-	gc[ 1] = new GuitarChords ( "C7",   00, 60, 64, 70, 72, 76 );
+	gc[ 1] = new GuitarChords ( "C7",   00, 48, 52, 58, 60, 64 );
 	//                                  X   C   E   Bb  C   E
-	gc[ 2] = new GuitarChords ( "DMaj", 00, 00, 62, 69, 74, 78 );
+	gc[ 2] = new GuitarChords ( "DMaj", 00, 00, 50, 57, 62, 66 );
 	//                                  X   X   D   A   D   F#
-	gc[ 3] = new GuitarChords ( "Dm",   00, 00, 62, 69, 74, 77 );
+	gc[ 3] = new GuitarChords ( "Dm",   00, 00, 50, 57, 62, 65 );
 	//                                  X   X   D   A   D   F
-	gc[ 4] = new GuitarChords ( "D7",   00, 00, 62, 69, 72, 78 );
+	gc[ 4] = new GuitarChords ( "D7",   00, 00, 50, 57, 60, 66 );
 	//                                  X   X   D   A   C   F#
-	gc[ 5] = new GuitarChords ( "EMaj", 52, 59, 64, 68, 71, 76 );
+	gc[ 5] = new GuitarChords ( "EMaj", 40, 47, 52, 56, 59, 64 );
 	//                                  E   B   E   G#  B   E
-	gc[ 6] = new GuitarChords ( "Em",   52, 59, 64, 67, 71, 76 );
+	gc[ 6] = new GuitarChords ( "Em",   40, 47, 52, 55, 59, 64 );
 	//                                  E   B   E   G   B   E
-	gc[ 7] = new GuitarChords ( "E7",   52, 59, 62, 68, 71, 76 );
+	gc[ 7] = new GuitarChords ( "E7",   40, 47, 50, 56, 59, 64 );
 	//                                  E   B   D   G#  B   E
-	gc[ 8] = new GuitarChords ( "GMaj", 55, 59, 62, 67, 71, 79 );
+	gc[ 8] = new GuitarChords ( "GMaj", 43, 47, 50, 55, 59, 67 );
 	//                                  G   B   D   G   B   G
-	gc[ 9] = new GuitarChords ( "G7",   55, 59, 62, 67, 71, 77 );
+	gc[ 9] = new GuitarChords ( "G7",   43, 47, 50, 55, 59, 65 );
 	//                                  G   B   D   G   B   F
-	gc[10] = new GuitarChords ( "AMaj", 00, 57, 64, 69, 73, 76 );
+	gc[10] = new GuitarChords ( "AMaj", 00, 45, 52, 57, 61, 64 );
 	//                                  X   A   E   A   C#  E
-	gc[11] = new GuitarChords ( "Am",   00, 57, 64, 69, 72, 76 );
+	gc[11] = new GuitarChords ( "Am",   00, 45, 52, 57, 60, 64 );
 	//                                  X   A   E   A   C   E
-	gc[12] = new GuitarChords ( "A7",   00, 57, 64, 67, 73, 76 );
+	gc[12] = new GuitarChords ( "A7",   00, 45, 52, 55, 61, 64 );
 	//                                  X   A   E   G   C#  E
-	gc[13] = new GuitarChords ( "B7",   00, 59, 63, 69, 71, 78 );
+	gc[13] = new GuitarChords ( "B7",   00, 47, 51, 57, 59, 66 );
 	//                                  X   B   D#  A   B   F#
 	int sleepTime = 1000;
 	for (int i = 0; i < gc.length; ++i) {
