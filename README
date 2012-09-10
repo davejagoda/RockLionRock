@@ -14,4 +14,4 @@ http://grantmuller.com/projects/midireference/
 Some terms that are useful to understand:
 Synthesizer - makes sounds
 Sequencer - performs sounds by sending MIDI messages to devices
-Soundbank - contains instructions for emulating sounds of intstruments
+Soundbank - contains instructions for emulating sounds of instruments
