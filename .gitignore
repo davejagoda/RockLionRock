@@ -1,0 +1,8 @@
+# Emacs
+*~
+
+# Java
+*.class
+
+# Python
+*.py[cod]
